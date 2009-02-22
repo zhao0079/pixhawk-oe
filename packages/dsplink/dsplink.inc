@@ -2,6 +2,8 @@ DESCRIPTION = "DSP Link for TI ARM/DSP processors"
 
 DEPENDS = "virtual/kernel perl-native"
 
+LICENSE = "TI Proprietary"
+
 inherit module
 
 S = "${WORKDIR}/dsplink_1_60/dsplink"
@@ -21,11 +23,6 @@ do_configure () {
 	cd ${DSPLINK}
 	perl config/bin/dsplinkcfg.pl --platform=${DSPLINKPLATFORM} --nodsp=1 --dspcfg_0=${DSPCFG} --dspos_0=DSPBIOS5XX  --gppos=${GPPOS} --comps=ponslrm
 	)
-
-	if [ $(echo ${KERNEL_VERSION} | cut -c5,6) -gt 26 ] ; then
-		sed -i -e s:asm/semaphore:linux/semaphore: ${DSPLINK}/gpp/src/osal/Linux/user.c
-		sed -i -e s:asm/semaphore:linux/semaphore: ${DSPLINK}/gpp/src/osal/Linux/2.6.18/sync.c
-	fi
 }
 
 PARALLEL_MAKE = ""
@@ -63,47 +60,48 @@ do_compile () {
 
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
 	export KDIR=${STAGING_KERNEL_DIR}
-	make -e all
+
+	make -e driver
+	make -e library
+	make -e samples
 
 	make -e -f ${WORKDIR}/Makefile-dsplink-dsp
+	mkdir -p ${DSPLINK}/gpp/export/BIN/Linux/${DSPLINKPLATFORM}/RELEASE
+        cp -a * ${DSPLINK}/gpp/export/BIN/Linux/${DSPLINKPLATFORM}/RELEASE
 
 #lpm bits
 	if [ -e ${S}/cetools/packages/ti/bios/power/ ] ; then
-		echo "MVTOOL_PREFIX=${TARGET_PREFIX}" > ${S}/Rules.make		
-		echo "UCTOOL_PREFIX=${TARGET_PREFIX}" >> ${S}/Rules.make
-		echo "LINUXKERNEL_INSTALL_DIR=${STAGING_KERNEL_DIR}"  >> ${S}/Rules.make
-		#export DSPLINK=${STAGING_DIR}/${MULTIMACH_TARGET_SYS}/dsplink
-
+		
 		# Build the DSP power manager kernel module
 		cd ${S}/cetools/packages/ti/bios/power/modules/${DSPPOWERSOC}/lpm
 
+		# Still need to move this into the patch file
 		if [ $(echo ${KERNEL_VERSION} | cut -c5,6) -gt 26 ] ; then
 			sed -i -e s:asm/semaphore:linux/semaphore: lpm_driver.c
 		fi
 
+		#what is this for?
 		rm -f *o
-		make	KERNEL_PATH=${STAGING_KERNEL_DIR} \
-			KERNEL_SRC=${STAGING_KERNEL_DIR} \
-			KERNEL_DIR=${STAGING_KERNEL_DIR} \
-			KERNEL_VERSION=${KERNEL_VERSION} \
-			TOOL_PREFIX=${TARGET_PREFIX} \
-			DSPLINK_REPO=${DSPLINK}/../ \
-			CC="${KERNEL_CC}" LD="${KERNEL_LD}" \
-			AR="${KERNEL_AR}"
+		
+		# lpm also needs KERNEL_INSTALL_DIR and MVTOOL_PREFIX which come from ti-paths.inc
+		export DSPLINK_REPO=${DSPLINK}/..
+		# should move the clean step into the clean stage..
+		#oe_runmake clean
+		oe_runmake
 	fi
 
 #cmemk bits
 	if [ -e ${S}/cetools/packages/ti/sdo/linuxutils/cmem ] ; then
+                echo "MVTOOL_PREFIX=${TARGET_PREFIX}" > ${S}/Rules.make
+                echo "UCTOOL_PREFIX=${TARGET_PREFIX}" >> ${S}/Rules.make
+                echo "LINUXKERNEL_INSTALL_DIR=${STAGING_KERNEL_DIR}"  >> ${S}/Rules.make
+                #export DSPLINK=${STAGING_DIR}/${MULTIMACH_TARGET_SYS}/dsplink
+
 		# Build the cmem kernel module
 		# We unset CFLAGS because kernel modules need different ones, this is basically a verbatim copy of kernel.bbclass and module-base.bbclass	
 		unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS	
+
 		cd ${S}/cetools/packages/ti/sdo/linuxutils/cmem
-
-		# This sadly breaks doing -c compile more than once, but I don't have a better solution	
-		if [ $(echo ${KERNEL_VERSION} | cut -c5,6) -gt 26 ] ; then
-			patch -p0 < ${WORKDIR}/cmemk-class-device-27.diff
-		fi
-
 		oe_runmake clean
 		oe_runmake KERNEL_PATH=${STAGING_KERNEL_DIR}   \
    	        KERNEL_SRC=${STAGING_KERNEL_DIR}    \
