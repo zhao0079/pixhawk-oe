@@ -6,7 +6,7 @@ require ti-paths.inc
 
 # https://www-a.ti.com/downloads/sds_support/applications_packages/dmai/dmai_1_20_00_06/dmai_setuplinux_1_20_00_06.bin
 # Install the above link and put the dmai_1_20_00_06.tar.gz file in the same directory as this recipe
-SRC_URI = "file://dmai_1_20_00_06.tar.gz \
+SRC_URI = "file://${TITOOLSDIR}/dmai_1_20_00_06.tar.gz \
 	   file://dmai-update-cpu-name.patch;patch=1 \
 	   file://dmai-update-fb-display.patch;patch=1 \
 	   file://dmai-update-v4l2-display.patch;patch=1 \

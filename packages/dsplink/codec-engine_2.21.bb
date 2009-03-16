@@ -15,7 +15,7 @@ PV = "221"
 # md5sum
 # Look for tarball at https://www-a.ti.com/downloads/sds_support/targetcontent/CE/index.html
 
-SRC_URI = "file://codec_engine_2_21.tar.gz \
+SRC_URI = "file://${TITOOLSDIR}/codec_engine_2_21.tar.gz \
            file://cmem-class-device-27-and-sched-include-fix.patch;patch=1 \
            file://dsplink-semaphore-27.patch;patch=1 \
            file://lpm-device-create-and-semaphore-include-fix.patch;patch=1 \

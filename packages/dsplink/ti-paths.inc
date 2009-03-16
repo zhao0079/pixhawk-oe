@@ -11,7 +11,7 @@ TITOOLSDIR ?= "${OE_TOP}/ti"
 TIBIOSDIR ?= "bios_5_33_02"
 TIXDCTOOLSDIR ?= "${TITOOLSDIR}/xdctools_3_10_03"
 # Path under TITOOLSDIR where the dsp toolchain is unpacked
-TICGTOOLSDIR ?= "cg6x_6_0_16"
+TICGTOOLSDIR ?= "cg6x_6_0_17"
 
 # Path to codecs/servers package - this is taken from DVSDK 3.00.00.29
 # - This needs fixing to be x-platform (not just omap3)
