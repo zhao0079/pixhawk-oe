@@ -3,6 +3,16 @@
 
 require packages/images/omap3-console-image.bb
 
-IMAGE_INSTALL += "dsplink"
+IMAGE_INSTALL += " \
+   dsplink-apps \
+   dsplink-module \
+   ti-lpm-module \
+   ti-cmemk-module \
+   opencv-apps \
+   opencv-samples \
+   libdc1394 \
+   libusb \
+   task-native-sdk \
+   "
 
 export IMAGE_BASENAME = "pixhawk-console-image"
