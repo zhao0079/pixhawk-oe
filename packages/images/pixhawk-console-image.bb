@@ -10,7 +10,6 @@ IMAGE_INSTALL += " \
    ti-cmemk-module \
    opencv-apps \
    opencv-samples \
-   libdc1394 \
    libusb \
    task-native-sdk \
    "
