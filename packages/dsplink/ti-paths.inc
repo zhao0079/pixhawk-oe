@@ -8,7 +8,7 @@
 # Path to the dir where the TI tools are unpacked
 TITOOLSDIR ?= "${OE_TOP}/ti"
 # Path under TITOOLSDIR where dspbios is unpacked
-TIBIOSDIR ?= "bios_5_33_02"
+TIBIOSDIR ?= "bios_5_33_03"
 TIXDCTOOLSDIR ?= "${TITOOLSDIR}/xdctools_3_10_03"
 # Path under TITOOLSDIR where the dsp toolchain is unpacked
 TICGTOOLSDIR ?= "cg6x_6_0_17"
