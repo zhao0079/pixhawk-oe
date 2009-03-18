@@ -19,7 +19,7 @@ PROVIDES += "virtual/egl"
 # 
 # voila!
 
-SRC_URI = "file://OMAP35x_Graphics_SDK_setuplinux_${SGXPV}.bin \
+SRC_URI = "file://${TOPDIR}/SGX/OMAP35x_Graphics_SDK_setuplinux_${SGXPV}.bin \
            file://rc.pvr \
            file://chameleonman.desktop \
            file://evilskull.desktop \
