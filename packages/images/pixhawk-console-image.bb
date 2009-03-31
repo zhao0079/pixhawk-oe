@@ -12,6 +12,7 @@ IMAGE_INSTALL += " \
    opencv-samples \
    libusb \
    task-native-sdk \
+   libdc1394 \
    "
 
 export IMAGE_BASENAME = "pixhawk-console-image"
