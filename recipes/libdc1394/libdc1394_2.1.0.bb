@@ -4,7 +4,7 @@ SECTION = "libs"
 LICENSE = "LGPLv2"
 PR = "r6"
  
-DEPENDS = "libusb1 libraw1394"
+DEPENDS = "libusb1"
 EXTRA_OECONF = "--disable-doxygen-docs"
  
 SRC_URI = " \
