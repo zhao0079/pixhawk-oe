@@ -5,6 +5,9 @@ PR = "r9"
 PE = "1"
 PV = "160"
 
+# Make sure that bitbake uses our custom recipe
+DEFAULT_PREFERENCE = "99"
+
 # Get dsplink tarball from TI website, place in sources and calculate
 # md5sum
 # Look for tarball at https://www-a.ti.com/downloads/sds_support/targetcontent/link/link_1_60/index.html

@@ -8,9 +8,11 @@ DEPENDS = "libusb1"
 EXTRA_OECONF = "--disable-doxygen-docs"
  
 SRC_URI = " \
-    ${SOURCEFORGE_MIRROR}/libdc1394/libdc1394-${PV}.tar.gz \
-    file://configure-use-pkgconfig-to-find-libraw1394.patch;patch=1 \
-"
+    ${SOURCEFORGE_MIRROR}/libdc1394/libdc1394-${PV}.tar.gz\
+    "
+#\\ \
+#    file://configure-use-pkgconfig-to-find-libraw1394.patch;patch=1 \
+#"
  
 do_stage() {
     autotools_stage_all

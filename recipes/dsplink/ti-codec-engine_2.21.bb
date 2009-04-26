@@ -11,6 +11,9 @@ inherit module
 PR = "r9"
 PV = "221"
 
+# Make sure that bitbake uses our custom recip
+DEFAULT_PREFERENCE = "99"
+
 # Get CE tarball from TI website, place in sources and calculate
 # md5sum
 # Look for tarball at https://www-a.ti.com/downloads/sds_support/targetcontent/CE/index.html

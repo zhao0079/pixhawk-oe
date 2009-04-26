@@ -4,10 +4,6 @@
 require recipes/images/omap3-console-image.bb
 
 IMAGE_INSTALL += " \
-   dsplink-apps \
-   dsplink-module \
-   ti-lpm-module \
-   ti-cmemk-module \
    opencv-apps \
    opencv-samples \
    libusb \

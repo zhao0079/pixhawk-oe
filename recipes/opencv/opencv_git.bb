@@ -3,7 +3,9 @@ HOMEPAGE = "http://sourceforge.net/projects/opencvlibrary"
 SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPLv2"
- 
+
+DEFAULT_PREFERENCE = 99
+
 ARM_INSTRUCTION_SET = "arm"
  
 PR = "r6"
