@@ -1,11 +1,11 @@
-# PIXHAWK console image
+# PIXHAWK desktop image
 # Includes all packages and setting for the PIXHAWK system
 
-require pixhawk-console-image.bb
+require pixhawk-desktop-image.bb
 
 IMAGE_INSTALL += " \
    dsplink-module \
    ti-cmemk-module \
    "
 
-export IMAGE_BASENAME = "pixhawk-console-dsp-image"
+export IMAGE_BASENAME = "pixhawk-desktop-dsp-image"

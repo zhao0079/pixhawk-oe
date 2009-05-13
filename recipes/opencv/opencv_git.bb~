@@ -4,7 +4,7 @@ SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPLv2"
 
-DEFAULT_PREFERENCE = "99"
+DEFAULT_PREFERENCE = 99
 
 ARM_INSTRUCTION_SET = "arm"
  
@@ -27,9 +27,8 @@ EXTRA_OECONF = " \
     --with-swig=no \
     --with-python=no \
     --with-quicktime=no \
-    --with-dc1394v2=yes \
-    --with-v4l=yes \
-    --with-apps=yes \
+        --with-dc1394v2=yes \
+        --with-v4l=yes \
 "
  
 export BUILD_SYS

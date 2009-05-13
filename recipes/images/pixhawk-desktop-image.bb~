@@ -1,18 +1,15 @@
 # PIXHAWK console image
 # Includes all packages and setting for the PIXHAWK system
 
-require recipes/images/omap3-console-image.bb
+recipes/opencv/opencv_cvs.bb:DEFAULT_PREFERENCE = "-99"
+require recipes/images/omap3-desktop-image.bb
 
 IMAGE_INSTALL += " \
-   opencv-dev \
-   opencv-bin \
    opencv-apps \
+   opencv-samples \
    libusb \
    task-native-sdk \
    libdc1394 \
-   nano \
-   dhclient \
-   grep \
    "
 
-export IMAGE_BASENAME = "pixhawk-console-image"
+export IMAGE_BASENAME = "pixhawk-desktop-image"
