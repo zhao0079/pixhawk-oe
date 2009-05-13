@@ -42,7 +42,6 @@ IMAGE_INSTALL += " \
   opencv-bin \
   libusb \
   task-native-sdk \
-  pkgconfig \
   libdc1394 \
   dhclient \
   grep \

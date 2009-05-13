@@ -23,7 +23,6 @@ inherit distutils-base autotools pkgconfig lib_package
 EXTRA_OECONF = " \
     --disable-debug \
     --with-gtk \
-    --disable-apps \
     --with-swig=no \
     --with-python=no \
     --with-quicktime=no \
