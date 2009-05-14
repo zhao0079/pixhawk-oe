@@ -30,7 +30,6 @@ IMAGE_INSTALL += " \
   nano \
   openssh-scp \
   openssh-ssh \
-  openssh-server \
   procps \
   socat \
   strace \
@@ -46,6 +45,7 @@ IMAGE_INSTALL += " \
   libdc1394 \
   dhclient \
   grep \
+  dropbear \
  "
 
 IMAGE_PREPROCESS_COMMAND = "create_etc_timestamp"

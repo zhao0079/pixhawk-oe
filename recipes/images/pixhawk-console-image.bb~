@@ -42,9 +42,11 @@ IMAGE_INSTALL += " \
   opencv-bin \
   libusb \
   task-native-sdk \
+  pkgconfig \
   libdc1394 \
   dhclient \
   grep \
+  dropbear \
  "
 
 IMAGE_PREPROCESS_COMMAND = "create_etc_timestamp"
