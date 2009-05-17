@@ -37,6 +37,7 @@ IMAGE_INSTALL += " \
   libertas-sd-firmware \
   rt73-firmware \
   zd1211-firmware \
+  opencv \
   opencv-dev \
   opencv-bin \
   libusb \
