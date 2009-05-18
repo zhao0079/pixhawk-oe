@@ -11,7 +11,6 @@ SPLASH ?= "psplash"
 
 E_CONFIG = " \
   e-wm-config-angstrom \
-  e-wm-config-illume \
   e-wm-config-standard \
   e-wm-config-default \
   e-wm-config-scaleable \
@@ -25,15 +24,12 @@ E_MODULES = " \
 "
 
 APPS = " \
-  abiword \
   cheese \
   evince \
   exhibit \
-  ekiga \
   empathy \
   firefox \
   gnome-mplayer \
-  gnumeric \
   jaaa \
   midori \
   numptyphysics \

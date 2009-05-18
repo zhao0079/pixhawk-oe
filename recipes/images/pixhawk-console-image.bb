@@ -47,13 +47,13 @@ IMAGE_INSTALL += " \
   dhclient \
   grep \
   dropbear \
-  libsqlite3-dev \
-  openssl-dev \
-  libapr-1-dev \
-  libaprutil-1-dev \
-  libneon-dev \  
-  libz-dev \
-  libtool-dev \
+#  libsqlite3-dev \
+#  openssl-dev \
+#  libapr-1-dev \
+#  libaprutil-1-dev \
+#  libneon-dev \  
+#  libz-dev \
+#  libtool-dev \
  "
 # TODO libsqlite3-dev, openssl-dev, libapr-1-dev, libaprutil-1-dev
 #      libneon-dev and libz-dev libtool-dev are subversion dependencies
