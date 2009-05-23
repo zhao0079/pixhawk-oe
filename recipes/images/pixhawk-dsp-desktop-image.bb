@@ -5,6 +5,7 @@ require pixhawk-desktop-image.bb
 
 IMAGE_INSTALL += " \
    dsplink-module \
+   dsplink-apps \
    ti-cmemk-module \
    "
 

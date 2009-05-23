@@ -6,10 +6,13 @@
 # https://www-a.ti.com/downloads/sds_support/targetcontent/index.html
 
 # Path to the dir where the TI tools are unpacked
-TITOOLSDIR ?= "${OE_TOP}/ti"
+# Only set dir if not already set
+TITOOLSDIR = ${@base_conditional('TITOOLS', '', '/OE/TI', '${TITOOLS}', d)}
+#TITOOLSDIR ?= "${OE_HOME}/ti"
+
 # Path under TITOOLSDIR where dspbios is unpacked
 TIBIOSDIR ?= "bios_5_33_03"
-TIXDCTOOLSDIR ?= "${TITOOLSDIR}/xdctools_3_10_03"
+TIXDCTOOLSDIR ?= "xdctools_3_15_00_50"
 # Path under TITOOLSDIR where the dsp toolchain is unpacked
 TICGTOOLSDIR ?= "cg6x_6_0_17"
 
@@ -20,7 +23,7 @@ TICGTOOLSDIR ?= "cg6x_6_0_17"
 # export some more variable to point to external TI tools
 # information is duplicated between the js and make based tools
 export CE_INSTALL_DIR=${S}
-export XDC_INSTALL_DIR=${TIXDCTOOLSDIR}
+export XDC_INSTALL_DIR=${TITOOLSDIR}/${TIXDCTOOLSDIR}
 export BIOS_INSTALL_DIR=${TITOOLSDIR}/${TIBIOSDIR}
 # needed for configuro:
 export CGTOOLS_V5T="${CROSS_DIR}"
@@ -37,6 +40,10 @@ export LINUXKERNEL_INSTALL_DIR=${STAGING_KERNEL_DIR}
 # This tells codec engine which targets to build
 DEVICES ?= "DM6446"
 DEVICES_omap5912osk = "fixme-ti-paths.inc"
+
+# Set a default for armv7a now, change this when omap4 and friends become available
+DEVICES_armv7a = "OMAP3530"
+
 DEVICES_omap3evm = "OMAP3530"
 DEVICES_beagleboard = "OMAP3530"
 DEVICES_overo = "OMAP3530"
@@ -45,36 +52,55 @@ DEVICES_davinci-dvevm = "DM6446"
 
 DSPLINKPLATFORM ?= "DAVINCI"
 DSPLINKPLATFORM_omap5912osk = "OMAP"
+
+# Set a default for armv7a now, change this when omap4 and friends become available
+DSPLINKPLATFORM_armv7a = "OMAP3530"
+
+DSPLINKPLATFORM_overo = "OMAP3530"
 DSPLINKPLATFORM_beagleboard = "OMAP3530"
 DSPLINKPLATFORM_omap3evm = "OMAP3530"
-DSPLINKPLATFORM_overo = "OMAP3530"
 DSPLINKPLATFORM_davinci-sffsdr = "DAVINCI"
 DSPLINKPLATFORM_davinci-dvevm = "DAVINCI"
 
 PLATFORM ?= "dm6446"
 PLATFORM_omap5912osk = "OMAP"
+
+# Set a default for armv7a now, change this when omap4 and friends become available
+PLATFORM_armv7a = "omap3530"
+
 PLATFORM_beagleboard = "omap3530"
-PLATFORM_omap3evm = "omap3530"
 PLATFORM_overo = "omap3530"
+PLATFORM_omap3evm = "omap3530"
 PLATFORM_davinci-sffsdr = "dm6446"
 PLATFORM_davinci-dvevm = "dm6446"
 
 DSPLINKDSP ?= "C64XX"
 
+# Set a default for armv7a now, change this when omap4 and friends become available
+DSPLINKSOC_armv7a = "3530"
+
 DSPLINKSOC ?= "DM6446"
+DSPLINKSOC_overo = "3530"
 DSPLINKSOC_beagleboard = "3530"
 DSPLINKSOC_omap3evm = "3530"
-DSPLINKSOC_overo = "3530"
 
 DSPCFG ?= "DM6446GEMSHMEM"
+
+# Set a default for armv7a now, change this when omap4 and friends become available
+DSPCFG_armv7a ?= "OMAP3530SHMEM"
+
+DSPCFG_overo ?= "OMAP3530SHMEM"
 DSPCFG_beagleboard ?= "OMAP3530SHMEM"
 DSPCFG_omap3evm ?= "OMAP3530SHMEM"
-DSPCFG_overo ?= "OMAP3530SHMEM"
 
 GPPOS ?= "MVL5G"
+
+# Set a default for armv7a now, change this when omap4 and friends become available
+GPPOS_armv7a = "OMAPLSP"
+
+GPPOS_overo = "OMAPLSP"
 GPPOS_beagleboard = "OMAPLSP"
 GPPOS_omap3evm = "OMAPLSP"
-GPPOS_overo = "OMAPLSP"
 
 export DEVICES
 export DSPLINKPLATFORM
@@ -84,7 +110,11 @@ export DSPCFG
 export GPPOS
 export PLATFORM
 
+# Set a default for armv7a now, change this when omap4 and friends become available
+DSPPOWERSOC_armv7a = "omap3530"
+
 DSPPOWERSOC ?= "dm6446"
+DSPPOWERSOC_overo = "omap3530"
 DSPPOWERSOC_beagleboard = "omap3530"
 DSPPOWERSOC_omap3evm = "omap3530"
-DSPPOWERSOC_overo = "omap3530"
+
