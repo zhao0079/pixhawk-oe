@@ -26,6 +26,7 @@ TARGET_neuros-osd2 = " dm6446_al dm6446_db"
 
 TARGET_armv7a = " o3530_al"
 
+TARGET_overo = " o3530_al"
 TARGET_beagleboard = " o3530_al"
 TARGET_omap3evm = " o3530_al"
 
