@@ -42,6 +42,7 @@ IMAGE_INSTALL += " \
   opencv \
   opencv-dev \
   opencv-bin \
+  artoolkit-dev \
   libusb \
   task-native-sdk \
   pkgconfig \

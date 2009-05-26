@@ -24,23 +24,23 @@ E_MODULES = " \
 "
 
 APPS = " \
-  cheese \
+#  cheese \
   evince \
   exhibit \
   empathy \
   firefox \
-  gnome-mplayer \
+#  gnome-mplayer \
   jaaa \
   midori \
   numptyphysics \
-  pidgin \
-  swfdec \
-  swfdec-mozilla \
+#  pidgin \
+#  swfdec \
+#  swfdec-mozilla \
   synergy \
   vnc \
   x11vnc \
   angstrom-x11vnc-xinit \
-  xmms \
+#  xmms \
   xterm \
 "
 
@@ -69,6 +69,8 @@ IMAGE_INSTALL += " \
   xdg-utils \
   xlsfonts \
   xrefresh \
+# Should be moved into a pixhawk-demo-image at a later point
+  libgles-omap3-demos \
  "
 
 export IMAGE_BASENAME = "pixhawk-desktop-image"
