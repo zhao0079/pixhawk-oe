@@ -5,7 +5,7 @@ inherit image
 
 DEPENDS = "task-base"
 
-FEED_URIS += "pixhawk##http://pixhawk.ethz.ch/ipkg/"
+FEED_URIS += "pixhawk##http://pixhawk.ethz.ch/ipk"
 
 IMAGE_EXTRA_INSTALL ?= ""
 

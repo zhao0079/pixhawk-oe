@@ -9,4 +9,4 @@ IMAGE_INSTALL += " \
    ti-cmemk-module \
    "
 
-export IMAGE_BASENAME = "pixhawk-console-dsp-image"
+export IMAGE_BASENAME = "pixhawk-dsp-console-image"
