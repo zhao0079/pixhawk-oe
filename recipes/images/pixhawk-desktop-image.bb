@@ -70,7 +70,7 @@ IMAGE_INSTALL += " \
   xlsfonts \
   xrefresh \
 # Should be moved into a pixhawk-demo-image at a later point
-  libgles-omap3-demos \
+#  libgles-omap3-demos \
  "
 
 export IMAGE_BASENAME = "pixhawk-desktop-image"

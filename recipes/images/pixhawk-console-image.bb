@@ -42,6 +42,7 @@ IMAGE_INSTALL += " \
   opencv \
   opencv-dev \
   opencv-bin \
+  gsl-dev \
   artoolkit-dev \
   libusb \
   task-native-sdk \
@@ -50,6 +51,7 @@ IMAGE_INSTALL += " \
   dhclient \
   grep \
   dropbear \
+  git \
 #  libsqlite3-dev \
 #  openssl-dev \
 #  libapr-1-dev \
