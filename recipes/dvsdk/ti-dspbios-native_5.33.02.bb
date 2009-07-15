@@ -1,10 +1,10 @@
 require ti-dspbios.inc
 inherit native
 
-SRC_URI	= "http://install.source.dir.com/bios_setuplinux_5_33_02.bin"
-BINFILE="bios_setuplinux_5_33_02.bin"
+SRC_URI	= "file://bios_setuplinux_5_33_03.bin"
+BINFILE="bios_setuplinux_5_33_03.bin"
 
-S = "${WORKDIR}/bios_5_33_02"
+S = "${WORKDIR}/bios_5_33_03"
 
 # Yes, the xdc stuff still breaks with a '.' in PWD
 PV = "533"
