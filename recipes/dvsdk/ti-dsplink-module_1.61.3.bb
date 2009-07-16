@@ -18,14 +18,23 @@ SRC_URI = "file://codec_engine_2_23_01.tar.gz  \
 S = "${WORKDIR}/codec_engine_2_23_01"
 	
 # DSPLINK - Config Variable for different platform
-DSPLINKPLATFORM            ?= "DAVINCI"
-DSPLINKPLATFORM_dm6446-evm ?= "DAVINCI"
+DSPLINKPLATFORM             ?= "DAVINCI"
+DSPLINKPLATFORM_dm6446-evm  ?= "DAVINCI"
+DSPLINKPLATFORM_overo	    ?= "OMAP3530"
+DSPLINKPLATFORM_beagleboard ?= "OMAP3530"
 
-DSPLINKDSPCFG            ?= "DM6446GEMSHMEM"
-DSPLINKDSPCFG_dm6446-evm ?= "DM6446GEMSHMEM"
+
+DSPLINKDSPCFG             ?= "DM6446GEMSHMEM"
+DSPLINKDSPCFG_dm6446-evm  ?= "DM6446GEMSHMEM"
+DSPLINKDSPCFG_overo       ?= "OMAP3530SHMEM"
+DSPLINKDSPCFG_beagleboard ?= "OMAP3530SHMEM"
+
 
 DSPLINKGPPOS             ?= "MVL5G"
 DSPLINKGPPOS_dm6446-evm  ?= "MVL5G"
+DSPLINKGPPOS_overo       ?= "OMAPLSP"
+DSPLINKGPPOS_beagleboard ?= "OMAPLSP"
+
 
 export DSPLINK="${S}/cetools/packages/dsplink"
 STAGING_TI_DSPBIOS_DIR="${STAGING_DIR_NATIVE}/ti-dspbios-native"
@@ -51,7 +60,7 @@ do_compile() {
     # investigation
 
     unset CFLAGS CPPFLAGS CXXFLAGS  LDFLAGS
-    
+
     # Build the gpp user space library
     cd ${DSPLINK}/gpp/src/api
     make \
@@ -106,7 +115,7 @@ do_compile() {
     make \
       BASE_CGTOOLS="${STAGING_TI_CGT6x_DIR}" \
       BASE_SABIOS="${STAGING_TI_DSPBIOS_DIR}" \
-      clean all
+     clean all
 }
 
 do_install () {
