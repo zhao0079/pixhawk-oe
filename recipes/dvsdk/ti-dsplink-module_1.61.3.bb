@@ -10,7 +10,7 @@ PV = "1613"
 MACHINE_KERNEL_PR_append = "a"
 
 installdir = "${datadir}/ti"
-SRC_URI = "http://install.source.dir.com/codec_engine_2_23_01.tar.gz  \
+SRC_URI = "file://codec_engine_2_23_01.tar.gz  \
 		   file://loadmodules-ti-dsplink-apps.sh \
 		   file://unloadmodules-ti-dsplink-apps.sh"
 
