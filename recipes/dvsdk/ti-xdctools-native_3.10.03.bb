@@ -1,8 +1,8 @@
 inherit native
 require ti-xdctools.inc
 
-SRC_URI	= "http://install.source.dir.com/xdctools_setuplinux_3_10_03.bin"
-BINFILE="xdctools_setuplinux_3_10_03.bin"
+SRC_URI	= "file://xdctools_setuplinux_3_15_00_50.bin"
+BINFILE="xdctools_setuplinux_3_15_00_50.bin"
 
 S = "${WORKDIR}/xdctools_3_10_03"
 

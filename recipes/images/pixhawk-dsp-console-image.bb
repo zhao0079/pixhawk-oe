@@ -4,9 +4,8 @@
 require pixhawk-console-image.bb
 
 IMAGE_INSTALL += " \
-   dsplink-module \
-   dsplink-apps \
-   ti-cmemk-module \
-   "
+   ti-dsplink-module \
+   ti-cmem-module \
+   ti-codec-engine "
 
 export IMAGE_BASENAME = "pixhawk-dsp-console-image"
