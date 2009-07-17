@@ -1,7 +1,7 @@
 # PIXHAWK console image
 # Includes all packages and setting for the PIXHAWK system
 
-require recipes/images/omap3-udesktop-image.bb
+require recipes/images/omap3-console-image.bb
 
 FEED_URIS += "pixhawk##http://pixhawk.ethz.ch/ipk"
 
@@ -19,4 +19,4 @@ IMAGE_INSTALL += " \
   git \
  "
 
-
+export IMAGE_BASENAME = "pixhawk-competition-image"

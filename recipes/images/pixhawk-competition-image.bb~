@@ -1,22 +1,27 @@
 # PIXHAWK console image
 # Includes all packages and setting for the PIXHAWK system
 
-require recipes/images/omap3-udesktop-image.bb
+require recipes/images/omap3-console-image
 
 FEED_URIS += "pixhawk##http://pixhawk.ethz.ch/ipk"
 
 IMAGE_INSTALL += " \
+  libertas-sd-firmware \
+  rt73-firmware \
+  zd1211-firmware \
   opencv \
   opencv-dev \
   opencv-bin \
   gsl-dev \
   artoolkit-dev \
+  libusb \
   task-native-sdk \
   pkgconfig \
   libdc1394 \
+  dhclient \
   grep \
   dropbear \
   git \
  "
 
-
+export IMAGE_BASENAME = "pixhawk-competition-image"
