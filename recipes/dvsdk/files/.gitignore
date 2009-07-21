@@ -1,7 +1,7 @@
 # Ignore file for git, making git ignore the manually downloaded files
 # needed for compiling the dsplink and cmem packages
 
-ti_cgt_c6000_6.0.21_setup_linux_x86.bin
 bios_setuplinux_5_33_03.bin
 codec_engine_2_23_01.tar.gz
 xdctools_setuplinux_3_15_00_50.bin
+ti_cgt_c6000_6.1.10_setup_linux_x86.bin

@@ -1,9 +1,9 @@
 require ti-cgt6x.inc
 inherit native
 
-SRC_URI	= "file://ti_cgt_c6000_6.0.21_setup_linux_x86.bin"
+SRC_URI	= "file://ti_cgt_c6000_6.1.10_setup_linux_x86.bin"
 
-BINFILE="ti_cgt_c6000_6.0.21_setup_linux_x86.bin"
+BINFILE="ti_cgt_c6000_6.1.10_setup_linux_x86.bin"
 
 S = "${WORKDIR}/cgt"
 
