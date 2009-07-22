@@ -1,5 +1,6 @@
 # PIXHAWK console image
 # Includes all packages and setting for the PIXHAWK system
+# including DSP support
 
 require pixhawk-console-image.bb
 

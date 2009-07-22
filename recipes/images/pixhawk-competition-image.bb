@@ -1,5 +1,6 @@
-# PIXHAWK console image
-# Includes all packages and setting for the PIXHAWK system
+
+# PIXHAWK competition image
+# Includes all packages and settings for the PIXHAWK competition configuration
 
 require recipes/images/omap3-console-image.bb
 
@@ -17,6 +18,9 @@ IMAGE_INSTALL += " \
   grep \
   dropbear \
   git \
+  ncurses-dev \
+  boost-dev \
+  nano \
  "
 
 export IMAGE_BASENAME = "pixhawk-competition-image"

@@ -52,6 +52,8 @@ IMAGE_INSTALL += " \
   grep \
   dropbear \
   git \
+  ncurses-dev \
+  boost-dev \
 #  libsqlite3-dev \
 #  openssl-dev \
 #  libapr-1-dev \

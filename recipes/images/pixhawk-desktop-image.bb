@@ -1,4 +1,4 @@
-# PIXHAWK console image
+# PIXHAWK desktop image
 # Includes all packages and setting for the PIXHAWK system
 
 require recipes/images/omap3-udesktop-image.bb
@@ -17,6 +17,10 @@ IMAGE_INSTALL += " \
   grep \
   dropbear \
   git \
+  ncurses-dev \
+  boost-dev \
  "
 
+
+export IMAGE_BASENAME = "pixhawk-desktop-image"
 
