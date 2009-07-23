@@ -21,6 +21,7 @@ IMAGE_INSTALL += " \
   ncurses-dev \
   boost-dev \
   nano \
+  screen \
  "
 
 export IMAGE_BASENAME = "pixhawk-competition-image"
