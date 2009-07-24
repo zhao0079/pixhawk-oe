@@ -6,7 +6,6 @@ require pixhawk-competition-image.bb
 
 IMAGE_INSTALL += " \
    ti-dsplink-module \
-   ti-cmem-module \
-   ti-codec-engine "
+   ti-cmem-module "
 
 export IMAGE_BASENAME = "pixhawk-dsp-competition-image"

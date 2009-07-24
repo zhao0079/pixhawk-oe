@@ -6,8 +6,7 @@ require pixhawk-desktop-image.bb
 
 IMAGE_INSTALL += " \
    ti-dsplink-module \
-   ti-cmem-module \
-   ti-codec-engine "
+   ti-cmem-module "
 
 
 export IMAGE_BASENAME = "pixhawk-dsp-desktop-image"
