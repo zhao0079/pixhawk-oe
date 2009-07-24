@@ -10,7 +10,7 @@ ARM_INSTRUCTION_SET = "arm"
  
 PR = "r6"
  
-DEPENDS = "libtool jpeg zlib libpng tiff glib-2.0 libv4l ffmpeg libdc1394"
+DEPENDS = "libtool gtk+ jpeg zlib libpng tiff glib-2.0 libv4l ffmpeg libdc1394"
  
 SRCREV = "d380c89b87a99f1ffd5e436e73474e07c4cad758"
 SRC_URI = "git://github.com/nzjrs/opencv.git;protocol=git;branch=dc1394"
