@@ -1,7 +1,7 @@
 # PIXHAWK desktop image
 # Includes all packages and setting for the PIXHAWK system
 
-require recipes/images/omap3-udesktop-image.bb
+require recipes/images/omap3-desktop-nand-image.bb
 
 FEED_URIS += "pixhawk##http://pixhawk.ethz.ch/ipk"
 
